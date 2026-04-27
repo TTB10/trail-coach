@@ -186,7 +186,7 @@ def test_realistic_training_block_yields_sensible_metrics() -> None:
     """Smoke test: a realistic 8-week block produces plausible values."""
     # 8 weeks: alternating hard (120) and easy (60) days, with a rest day every Sunday.
     days: list[float] = []
-    for week in range(8):
+    for _ in range(8):
         days.extend([120.0, 60.0, 120.0, 60.0, 120.0, 60.0, 0.0])
 
     series = compute_training_load_series(days)
