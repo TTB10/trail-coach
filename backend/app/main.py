@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.api.v1 import health
+from app.api.v1 import health, predictions, zones
 
 app = FastAPI(
     title="Trail Coach API",
@@ -9,6 +9,8 @@ app = FastAPI(
 )
 
 app.include_router(health.router)
+app.include_router(predictions.router)
+app.include_router(zones.router)
 
 
 @app.get("/")
